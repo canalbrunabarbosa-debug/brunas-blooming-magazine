@@ -107,39 +107,65 @@ function Index() {
       </header>
 
       {/* 01 HERO */}
-      <section id="top" className="relative min-h-[100svh] bg-primary pt-16 text-primary-foreground">
-        <Flower className="spin-slow absolute -right-24 -top-10 w-80 opacity-90 md:w-[34rem]" petal="fill-secondary" core="fill-accent" />
-        <Flower className="spin-slow absolute -bottom-20 -left-16 w-56 md:w-72" petal="fill-cobalt" core="fill-secondary" />
-        <div className="relative mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-12 md:py-16">
-          <div className="reveal md:col-span-7">
-            <p className="label-mono mb-6">Media Kit · Edição 01 · @brunapbarb</p>
-            <h1 className="font-display-x text-[22vw] leading-[0.82] tracking-tight md:text-[11rem]">
-              Bruna
-              <br />
-              <span className="italic text-secondary">Barbosa</span>
-            </h1>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {["Criativa", "Artística", "Autêntica"].map((w, i) => (
-                <span key={w} className={`label-mono border border-primary-foreground px-3 py-2 ${i === 1 ? "bg-secondary text-ink" : ""}`}>
-                  {w}
-                </span>
-              ))}
+      <section id="top" className="relative min-h-[100svh] overflow-hidden bg-primary pt-14 text-primary-foreground">
+        {/* editorial top rail */}
+        <div className="label-mono relative z-20 mx-auto flex max-w-7xl justify-between px-5 pt-4 opacity-90">
+          <span>Ed. Nº 01</span>
+          <span className="hidden sm:inline">Portfólio criativo</span>
+          <span>@brunapbarb</span>
+        </div>
+
+        <div className="relative mx-auto grid max-w-7xl px-5 pb-10 pt-4 md:grid-cols-12 md:gap-6 md:pt-8">
+          {/* NAME — layered over photo */}
+          <h1 className="reveal font-display-x pointer-events-none relative z-20 text-[25vw] font-black leading-[0.78] tracking-[-0.04em] md:col-span-12 md:text-[12.5rem]">
+            Bruna
+            <span className="block text-right italic font-light text-secondary md:-mt-6">Barbosa</span>
+          </h1>
+
+          {/* PHOTO stage */}
+          <div className="reveal relative z-10 -mt-[14vw] md:col-span-6 md:col-start-4 md:-mt-28" style={{ animationDelay: ".15s" }}>
+            <div className="spin-slow absolute -inset-6 rounded-full border border-dashed border-primary-foreground/50" />
+            <Flower className="float-y absolute -left-10 top-1/3 z-20 w-24 md:-left-20 md:w-36" petal="fill-cobalt" core="fill-secondary" />
+            <Star className="float-y absolute -right-3 top-6 z-20 w-12 text-secondary md:w-16" />
+            <div className="relative mx-auto aspect-[4/5] w-[82%] overflow-hidden rounded-t-full border-2 border-ink bg-accent">
+              <div className="placeholder-art absolute inset-0" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-accent-foreground">
+                <Flower className="w-16 opacity-60" petal="fill-primary" core="fill-secondary" />
+                <span className="label-mono bg-ink px-2 py-1 text-background">[ Foto principal · Bruna ]</span>
+                <span className="label-mono text-accent-foreground/60">retrato editorial · alta resolução</span>
+              </div>
             </div>
+            <span className="label-mono absolute -right-1 bottom-10 origin-bottom-right -rotate-90 whitespace-nowrap md:-right-8">
+              Criativa · Artística · Autêntica
+            </span>
           </div>
-          <div className="reveal relative md:col-span-5" style={{ animationDelay: "0.2s" }}>
-            <div className="relative mx-auto aspect-[3/4] max-w-sm rounded-t-full border-2 border-ink bg-secondary p-3">
-              <Placeholder label="Foto de capa · beleza" className="h-full rounded-t-full" />
+
+          {/* POSITIONING + CTA */}
+          <div className="reveal relative z-20 mt-8 flex flex-col justify-end gap-6 md:col-span-3 md:mt-0" style={{ animationDelay: ".3s" }}>
+            <p className="label-mono text-secondary">Criadora de conteúdo & influência criativa</p>
+            <p className="font-display-x text-2xl leading-tight">
+              Conteúdo, influência e direção estética — transitando entre universos com uma só assinatura.
+            </p>
+            <p className="label-mono leading-relaxed opacity-80">Beauty · Style · Lifestyle · Cultura pop · Conteúdo criativo</p>
+            <div className="flex flex-col gap-3">
+              <a href="#portfolio" className="group label-mono flex items-center justify-between border-2 border-ink bg-ink px-5 py-4 text-background transition-all hover:bg-secondary hover:text-ink">
+                Ver meu trabalho <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <a href="#universos" className="group label-mono flex items-center justify-between border-2 border-primary-foreground px-5 py-4 transition-all hover:bg-primary-foreground hover:text-primary">
+                Conhecer meu universo <span className="transition-transform group-hover:rotate-45">✦</span>
+              </a>
             </div>
-            <Star className="absolute -left-2 top-10 w-14 text-secondary" />
           </div>
         </div>
-        <div className="relative border-y border-ink bg-ink py-3 text-background">
-          <div className="marquee flex w-max gap-8 whitespace-nowrap font-display-x text-2xl italic">
-            {Array.from({ length: 2 }).map((_, k) => (
-              <span key={k} className="flex gap-8">
-                {"A publicidade entra no meu universo — não o meu universo na publicidade ✦ ".repeat(2)}
-              </span>
-            ))}
+
+        {/* MANIFESTO */}
+        <div className="relative z-20 border-t border-ink bg-background px-5 py-12 text-ink md:py-16">
+          <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-12">
+            <span className="font-display-x text-8xl leading-none text-primary md:col-span-1 md:text-9xl">“</span>
+            <blockquote className="reveal font-display-x text-[9vw] leading-[1] tracking-tight md:col-span-10 md:text-6xl">
+              A publicidade entra no <i className="text-primary">meu universo</i> — não o meu universo <span className="bg-secondary px-1">na publicidade.</span>
+            </blockquote>
+            <p className="label-mono text-muted-foreground md:col-span-1">— B.B.</p>
           </div>
         </div>
       </section>
@@ -180,27 +206,37 @@ function Index() {
         </div>
       </section>
 
-      {/* 04 UNIVERSOS */}
-      <section id="universos" className="mx-auto max-w-7xl scroll-mt-16 px-5 py-20 md:py-28">
-        <SectionHead n="04" kicker="Universos de conteúdo" title={<>Muitos mundos, <i className="text-primary">uma</i> assinatura.</>} />
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {[
-            ["Beleza", "Make · cabelo · skincare · transformações", "bg-primary text-primary-foreground"],
-            ["Lifestyle", "Looks · rotina · estética", "bg-secondary text-ink"],
-            ["Cultura pop", "Música · séries · terror", "bg-accent text-accent-foreground"],
-            ["Formatos", "Reviews · tutoriais · challenges", "bg-cobalt text-background"],
-          ].map(([t, d, c], i) => (
-            <article key={t} className={`group relative aspect-square overflow-hidden border border-ink p-4 transition-transform hover:-translate-y-1 ${c} ${i % 2 ? "md:mt-12" : ""}`}>
-              <span className="label-mono">0{i + 1}</span>
-              <Star className="absolute right-3 top-3 w-6 transition-transform duration-700 group-hover:rotate-180" />
-              <div className="absolute inset-x-4 bottom-4">
-                <h3 className="font-display-x text-3xl italic md:text-4xl">{t}</h3>
-                <p className="mt-1 text-xs opacity-80">{d}</p>
-              </div>
-            </article>
-          ))}
+      {/* 04 UNIVERSOS — transition */}
+      <section id="universos" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
+        <div className="mx-auto max-w-7xl px-5">
+          <p className="label-mono mb-4 text-secondary">Territórios criativos</p>
+          <h2 className="reveal font-display-x mb-12 text-[14vw] leading-[0.85] md:text-9xl">
+            Muitos mundos.<br /><i className="text-primary">Uma assinatura.</i>
+          </h2>
+          <div className="relative">
+            <Flower className="spin-slow pointer-events-none absolute left-1/2 top-1/2 z-10 w-40 -translate-x-1/2 -translate-y-1/2 opacity-95 md:w-64" petal="fill-primary" core="fill-secondary" />
+            <div className="grid grid-cols-2 gap-px border border-background/30 bg-background/30 md:grid-cols-4">
+              {[
+                ["Beauty", "Make · cabelo · skincare · transformações", "text-primary"],
+                ["Style", "Looks · estética · composição", "text-secondary"],
+                ["Lifestyle", "Rotina · casa · escolhas", "text-cobalt"],
+                ["Cultura pop", "Música · séries · terror", "text-accent"],
+              ].map(([t, d, c], i) => (
+                <article key={t} className="group relative flex aspect-[3/4] flex-col justify-between bg-ink p-4 transition-colors duration-500 hover:bg-primary md:p-6">
+                  <div className="flex justify-between">
+                    <span className="label-mono text-background/50">U.0{i + 1}</span>
+                    <Star className={`w-5 transition-transform duration-700 group-hover:rotate-180 ${c} group-hover:text-background`} />
+                  </div>
+                  <div>
+                    <h3 className={`font-display-x text-3xl italic md:text-5xl ${c} transition-colors group-hover:text-background`}>{t}</h3>
+                    <p className="mt-2 text-xs text-background/70">{d}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <p className="label-mono mt-8 text-background/60">Também aberta a: alimentação · tecnologia · eletrodomésticos · varejo · entretenimento</p>
         </div>
-        <p className="label-mono mt-8 text-muted-foreground">Aberta a: alimentação · tecnologia · eletrodomésticos · varejo · entretenimento · lifestyle</p>
       </section>
 
       {/* 05 PORTFÓLIO */}
