@@ -198,6 +198,94 @@ function AboutBruna() {
   );
 }
 
+function Stat({ value, label, tone }: { value: string; label: string; tone: string }) {
+  return (
+    <div className="border-t border-background/25 pt-4">
+      <p className={`font-display-x text-5xl leading-none tabular-nums sm:text-6xl md:text-7xl ${tone}`}>{value}</p>
+      <p className="label-mono mt-3 text-background/75">{label}</p>
+    </div>
+  );
+}
+
+function PresencaDigital() {
+  return (
+    <section id="numeros" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
+      <div className="mx-auto max-w-7xl px-5">
+        <div className="mb-14 grid gap-6 md:mb-20 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <p className="label-mono mb-3 text-secondary">
+              <span className="text-orange">03</span> — Ecossistema de criação
+            </p>
+            <h2 className="font-display-x text-6xl leading-[0.9] md:text-8xl">
+              Presença <i className="text-primary">digital</i>
+            </h2>
+          </div>
+          <p className="max-w-sm text-lg leading-relaxed text-background/80 md:col-span-4">
+            Uma comunidade construída em diferentes plataformas, formatos e universos criativos.
+          </p>
+        </div>
+
+        {/* YOUTUBE — destaque */}
+        <div className="relative mb-16 border-y border-background/25 py-10 md:mb-24 md:py-14">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <p className="label-mono text-cobalt">YouTube · Bruna Barbosa</p>
+            <p className="label-mono text-orange">1+ milhão de visualizações no YouTube</p>
+          </div>
+          <p className="font-display-x mt-6 text-[17vw] leading-none tabular-nums text-secondary md:text-[11rem]">1.063.476</p>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2 md:max-w-2xl">
+            <p className="label-mono text-background/75">visualizações totais</p>
+            <Stat value="2.804" label="inscritos" tone="text-background" />
+          </div>
+        </div>
+
+        <div className="grid gap-16 md:grid-cols-12 md:gap-10">
+          {/* INSTAGRAM */}
+          <div className="md:col-span-7">
+            <div className="mb-8 flex items-center gap-3">
+              <span className="h-3 w-3 rounded-full bg-primary" aria-hidden />
+              <h3 className="font-display-x text-4xl md:text-5xl">Instagram</h3>
+              <span className="label-mono text-background/60">@brunapbarb</span>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-2">
+              <Stat value="12.789" label="seguidores" tone="text-primary" />
+              <Stat value="105.781" label="visualizações nos últimos 30 dias" tone="text-background" />
+              <div className="sm:col-span-2">
+                <Stat value="5.948" label="interações nos últimos 30 dias" tone="text-primary" />
+                <p className="label-mono mt-2 text-background/50">
+                  Reels · 3.300 <span className="text-orange">/</span> Stories · 1.900 <span className="text-orange">/</span> Posts · 748
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* TIKTOK */}
+          <div className="relative md:col-span-5 md:mt-28">
+            <div className="mb-8 flex items-center gap-3">
+              <span className="h-3 w-3 rotate-45 bg-accent ring-1 ring-background/40" aria-hidden />
+              <h3 className="font-display-x text-4xl md:text-5xl">TikTok</h3>
+              <span className="label-mono text-background/60">@brunapbarb</span>
+            </div>
+            <div className="grid gap-8">
+              <Stat value="715.800" label="curtidas" tone="text-secondary" />
+              <div className="grid gap-8 sm:grid-cols-2">
+                <Stat value="8.679" label="seguidores" tone="text-background" />
+                <Stat value="79.300" label="visualizações nos últimos 28/30 dias" tone="text-background" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 flex items-center gap-4 md:mt-28">
+          <Flower className="h-10 w-10 shrink-0 spin-slow" core="fill-orange" />
+          <p className="font-display-x text-2xl italic md:text-4xl">
+            Cada plataforma tem seu ritmo. <span className="text-primary">A assinatura continua sendo minha.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   const [open, setOpen] = useState(false);
 
@@ -334,21 +422,7 @@ function Index() {
       <AboutBruna />
 
       {/* 03 NÚMEROS */}
-      <section id="numeros" className="scroll-mt-16 bg-ink py-20 text-background md:py-28">
-        <div className="mx-auto max-w-7xl px-5">
-          <p className="label-mono mb-3 text-secondary">03 — Presença digital</p>
-          <h2 className="font-display-x mb-12 text-5xl md:text-7xl">Em <i className="text-primary">números</i></h2>
-          <div className="grid grid-cols-2 gap-px bg-background/20 md:grid-cols-4">
-            {["Seguidores Instagram", "Seguidores TikTok", "Engajamento médio", "Alcance mensal"].map((l, i) => (
-              <div key={l} className="bg-ink p-6">
-                <p className={`font-display-x text-5xl md:text-7xl ${["text-primary", "text-secondary", "text-cobalt", "text-background"][i]}`}>—</p>
-                <p className="label-mono mt-3 text-background/70">{l}</p>
-                <p className="label-mono mt-1 text-background/40">[ a fornecer ]</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PresencaDigital />
 
       {/* 05 PORTFÓLIO */}
       <section id="portfolio" className="scroll-mt-16 border-y border-ink bg-muted py-20 md:py-28">
