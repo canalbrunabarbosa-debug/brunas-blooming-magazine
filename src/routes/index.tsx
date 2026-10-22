@@ -87,7 +87,6 @@ function AboutBruna() {
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-20 md:pb-24 md:pt-28">
         <div className="mb-8 flex items-center justify-between border-b border-ink pb-4">
           <p className="label-mono">02 — Sobre Bruna</p>
-          <span className="label-mono text-muted-foreground">Por trás da estética</span>
         </div>
         <h2 className="font-display-x max-w-4xl text-5xl leading-[1.05] md:text-7xl">
           Uma mente que está sempre <i className="text-primary">alguns passos à frente.</i>
@@ -103,7 +102,7 @@ function AboutBruna() {
             </div>
             <Star className="absolute -right-3 top-6 w-12 text-cobalt md:-right-5 md:w-16" />
             <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-              <span className="font-display-x text-2xl italic">Bruna, por inteiro.</span>
+              <span className="font-display-x text-2xl italic">Bruna Barbosa</span>
               <span className="label-mono text-muted-foreground">B.B. / 01</span>
             </figcaption>
           </figure>
@@ -137,8 +136,7 @@ function AboutBruna() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
         <div className="grid gap-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-5">
-            <p className="label-mono mb-4 text-muted-foreground">O que eu crio</p>
-            <h3 className="font-display-x text-4xl leading-tight md:text-5xl">Curiosidade como <i className="text-accent">ponto de partida.</i></h3>
+            <h3 className="font-display-x text-4xl leading-tight md:text-5xl">O que eu <i className="text-accent">crio</i></h3>
             <Flower className="my-8 w-20 md:my-10 md:w-28" petal="fill-cobalt" core="fill-secondary" />
             <p className="about-prose">Meu conteúdo transita entre beleza, cabelo, maquiagem, lifestyle, estética, cultura pop, transformações e tudo aquilo que desperta minha curiosidade criativa.</p>
           </div>
@@ -154,7 +152,7 @@ function AboutBruna() {
 
       <div className="relative overflow-hidden bg-accent py-16 text-accent-foreground md:py-24">
         <div className="mx-auto max-w-7xl px-5">
-          <p className="label-mono mb-6 text-secondary">Como eu trabalho com marcas</p>
+          <h3 className="font-display-x mb-8 text-3xl text-secondary md:text-4xl">Como eu trabalho com marcas</h3>
           <div className="grid gap-8 md:grid-cols-12 md:gap-12">
             <h3 className="font-display-x text-4xl leading-tight md:col-span-5 md:text-5xl">Uma boa publicidade começa antes de apertar o <span className="text-secondary">REC<span className="ml-2 inline-block h-3 w-3 rounded-full bg-primary" aria-hidden /></span>.</h3>
             <div className="about-prose space-y-6 md:col-span-6 md:col-start-7">
@@ -177,9 +175,8 @@ function AboutBruna() {
       </div>
 
       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
-        <p className="label-mono mb-5 text-muted-foreground">Por que trabalhar comigo?</p>
         <div className="mb-12 flex items-end justify-between gap-6 md:mb-16">
-          <h3 className="font-display-x max-w-2xl text-4xl leading-tight md:text-5xl">Uma ideia boa.<br /><i className="text-primary">Cinco pontos de apoio.</i></h3>
+          <h3 className="font-display-x max-w-2xl text-4xl leading-tight md:text-5xl">Por que trabalhar <i className="text-primary">comigo?</i></h3>
           <Flower className="hidden w-24 shrink-0 sm:block" petal="fill-primary" core="fill-secondary" />
         </div>
         <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 md:grid-cols-6 md:gap-y-14">
