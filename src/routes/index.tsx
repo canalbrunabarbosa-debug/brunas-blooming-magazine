@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
+  ["universos", "Universos"],
   ["sobre", "Sobre"],
   ["numeros", "Números"],
-  ["universos", "Universos"],
   ["portfolio", "Portfólio"],
   ["formatos", "Formatos"],
   ["marcas", "Marcas"],
@@ -161,12 +161,45 @@ function Index() {
         {/* MANIFESTO */}
         <div className="relative z-20 border-t border-ink bg-background px-5 py-12 text-ink md:py-16">
           <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-12">
-            <span className="font-display-x text-8xl leading-none text-primary md:col-span-1 md:text-9xl">“</span>
+            <span className="font-display-x text-8xl -mb-10 leading-none text-primary md:col-span-1 md:mb-0 md:text-9xl">“</span>
             <blockquote className="reveal font-display-x text-[9vw] leading-[1] tracking-tight md:col-span-10 md:text-6xl">
               A publicidade entra no <i className="text-primary">meu universo</i> — não o meu universo <span className="bg-secondary px-1">na publicidade.</span>
             </blockquote>
             <p className="label-mono text-muted-foreground md:col-span-1">— B.B.</p>
           </div>
+        </div>
+      </section>
+
+      {/* 04 UNIVERSOS — transition */}
+      <section id="universos" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
+        <div className="mx-auto max-w-7xl px-5">
+          <p className="label-mono mb-4 text-secondary">Territórios criativos</p>
+          <h2 className="reveal font-display-x mb-12 text-[14vw] leading-[0.85] md:text-9xl">
+            Muitos mundos.<br /><i className="text-primary">Uma assinatura.</i>
+          </h2>
+          <div className="relative">
+            <Flower className="spin-slow pointer-events-none absolute left-1/2 top-1/2 z-10 w-40 -translate-x-1/2 -translate-y-1/2 opacity-95 md:w-64" petal="fill-primary" core="fill-secondary" />
+            <div className="grid grid-cols-2 gap-px border border-background/30 bg-background/30 md:grid-cols-4">
+              {[
+                ["Beauty", "Make · cabelo · skincare · transformações", "text-primary"],
+                ["Style", "Looks · estética · composição", "text-secondary"],
+                ["Lifestyle", "Rotina · casa · escolhas", "text-cobalt"],
+                ["Cultura pop", "Música · séries · terror", "text-accent"],
+              ].map(([t, d, c], i) => (
+                <article key={t} className="group relative flex aspect-[3/4] flex-col justify-between bg-ink p-4 transition-colors duration-500 hover:bg-primary md:p-6">
+                  <div className="flex justify-between">
+                    <span className="label-mono text-background/50">U.0{i + 1}</span>
+                    <Star className={`w-5 transition-transform duration-700 group-hover:rotate-180 ${c} group-hover:text-background`} />
+                  </div>
+                  <div>
+                    <h3 className={`font-display-x text-3xl italic md:text-5xl ${c} transition-colors group-hover:text-background`}>{t}</h3>
+                    <p className="mt-2 text-xs text-background/70">{d}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <p className="label-mono mt-8 text-background/60">Também aberta a: alimentação · tecnologia · eletrodomésticos · varejo · entretenimento</p>
         </div>
       </section>
 
@@ -203,39 +236,6 @@ function Index() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 04 UNIVERSOS — transition */}
-      <section id="universos" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
-        <div className="mx-auto max-w-7xl px-5">
-          <p className="label-mono mb-4 text-secondary">Territórios criativos</p>
-          <h2 className="reveal font-display-x mb-12 text-[14vw] leading-[0.85] md:text-9xl">
-            Muitos mundos.<br /><i className="text-primary">Uma assinatura.</i>
-          </h2>
-          <div className="relative">
-            <Flower className="spin-slow pointer-events-none absolute left-1/2 top-1/2 z-10 w-40 -translate-x-1/2 -translate-y-1/2 opacity-95 md:w-64" petal="fill-primary" core="fill-secondary" />
-            <div className="grid grid-cols-2 gap-px border border-background/30 bg-background/30 md:grid-cols-4">
-              {[
-                ["Beauty", "Make · cabelo · skincare · transformações", "text-primary"],
-                ["Style", "Looks · estética · composição", "text-secondary"],
-                ["Lifestyle", "Rotina · casa · escolhas", "text-cobalt"],
-                ["Cultura pop", "Música · séries · terror", "text-accent"],
-              ].map(([t, d, c], i) => (
-                <article key={t} className="group relative flex aspect-[3/4] flex-col justify-between bg-ink p-4 transition-colors duration-500 hover:bg-primary md:p-6">
-                  <div className="flex justify-between">
-                    <span className="label-mono text-background/50">U.0{i + 1}</span>
-                    <Star className={`w-5 transition-transform duration-700 group-hover:rotate-180 ${c} group-hover:text-background`} />
-                  </div>
-                  <div>
-                    <h3 className={`font-display-x text-3xl italic md:text-5xl ${c} transition-colors group-hover:text-background`}>{t}</h3>
-                    <p className="mt-2 text-xs text-background/70">{d}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <p className="label-mono mt-8 text-background/60">Também aberta a: alimentação · tecnologia · eletrodomésticos · varejo · entretenimento</p>
         </div>
       </section>
 
