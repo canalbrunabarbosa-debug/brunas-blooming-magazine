@@ -86,7 +86,9 @@ function AboutBruna() {
     <section id="sobre" className="about-editorial scroll-mt-16">
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-20 md:pb-24 md:pt-28">
         <div className="mb-8 flex items-center justify-between border-b border-ink pb-4">
-          <p className="label-mono">02 — Sobre Bruna</p>
+          <p className="label-mono"><span className="text-orange">02</span> — Sobre Bruna</p>
+          <span className="label-mono text-muted-foreground">Por trás da estética</span>
+
         </div>
         <h2 className="font-display-x max-w-4xl text-5xl leading-[1.05] md:text-7xl">
           Uma mente que está sempre <i className="text-primary">alguns passos à frente.</i>
@@ -183,7 +185,7 @@ function AboutBruna() {
           {pillars.map((pillar, i) => (
             <article key={pillar.title} className={`relative min-w-0 border-t border-ink/20 pt-5 ${i < 3 ? "md:col-span-2" : "md:col-span-3"}`}>
               <div className="mb-4 flex items-center justify-between gap-3">
-                <span className={`font-display-x text-4xl italic ${pillar.color}`}>0{i + 1}</span>
+                <span className="font-display-x text-4xl italic text-orange">0{i + 1}</span>
                 <Star className={`w-5 ${pillar.color}`} />
               </div>
               <h4 className={`font-display-x mb-3 text-3xl ${pillar.color}`}>{pillar.title}</h4>
@@ -249,7 +251,7 @@ function Index() {
           <div className="reveal relative z-10 -mt-[14vw] md:col-span-6 md:col-start-4 md:-mt-28" style={{ animationDelay: ".15s" }}>
             <div className="spin-slow absolute -inset-6 rounded-full border border-dashed border-primary-foreground/50" />
             <Flower className="float-y absolute -left-10 top-1/3 z-20 w-24 md:-left-20 md:w-36" petal="fill-cobalt" core="fill-secondary" />
-            <Star className="float-y absolute -right-3 top-6 z-20 w-12 text-secondary md:w-16" />
+            <Star className="float-y absolute -right-3 top-6 z-20 w-12 text-orange md:w-16" />
             <div className="relative mx-auto aspect-[4/5] w-[82%] overflow-hidden rounded-t-full border-2 border-ink bg-accent">
               <div className="placeholder-art absolute inset-0" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-accent-foreground">
@@ -258,9 +260,9 @@ function Index() {
                 <span className="label-mono text-accent-foreground/60">retrato editorial · alta resolução</span>
               </div>
             </div>
-            <span className="label-mono absolute -right-1 bottom-10 origin-bottom-right -rotate-90 whitespace-nowrap md:-right-8">
-              Criativa · Artística · Autêntica
-            </span>
+            <p className="label-mono mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+              <span>Criativa</span><span className="text-orange" aria-hidden>·</span><span>Artística</span><span className="text-orange" aria-hidden>·</span><span>Autêntica</span>
+            </p>
           </div>
 
           {/* POSITIONING + CTA */}
@@ -296,12 +298,14 @@ function Index() {
       {/* 04 UNIVERSOS — transition */}
       <section id="universos" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
         <div className="mx-auto max-w-7xl px-5">
-          <p className="label-mono mb-4 text-secondary">Territórios criativos</p>
+          <div className="mb-4 flex items-center justify-between gap-4">
+            <p className="label-mono text-secondary">Territórios criativos</p>
+            <Flower className="spin-slow pointer-events-none w-12 shrink-0 md:w-16" petal="fill-primary" core="fill-orange" />
+          </div>
           <h2 className="reveal font-display-x mb-12 text-[14vw] leading-[0.85] md:text-9xl">
             Muitos mundos.<br /><i className="text-primary">Uma assinatura.</i>
           </h2>
           <div className="relative">
-            <Flower className="spin-slow pointer-events-none absolute left-1/2 top-1/2 z-10 w-40 -translate-x-1/2 -translate-y-1/2 opacity-95 md:w-64" petal="fill-primary" core="fill-secondary" />
             <div className="grid grid-cols-2 gap-px border border-background/30 bg-background/30 md:grid-cols-4">
               {[
                 ["Beauty", "Make · cabelo · skincare · transformações", "text-primary"],
