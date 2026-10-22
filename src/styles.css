@@ -184,6 +184,12 @@
 @keyframes floaty { 50% { transform: translateY(-10px) rotate(6deg); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes reveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.about-editorial { letter-spacing: 0; }
+.about-editorial .label-mono { letter-spacing: 0; }
+.about-prose { font-size: 1rem; line-height: 1.8; }
+@media (min-width: 768px) {
+  .about-prose { font-size: 1.0625rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   .marquee, .spin-slow, .reveal, .float-y { animation: none; }
 }

@@ -73,6 +73,132 @@ function SectionHead({ n, title, kicker }: { n: string; title: React.ReactNode; 
 }
 
 /* ---------- Page ---------- */
+function AboutBruna() {
+  const pillars = [
+    { title: "Criatividade", text: "Ideias rápidas, soluções visuais e facilidade para transformar um briefing em conceito.", color: "text-primary" },
+    { title: "Interpretação", text: "Entendo o direcionamento da marca e consigo traduzir informações em conteúdo de forma clara.", color: "text-accent" },
+    { title: "Agilidade", text: "Gosto de processos objetivos e tenho facilidade para chegar rapidamente a uma direção criativa.", color: "text-cobalt" },
+    { title: "Identidade", text: "Meu conteúdo precisa fazer sentido para mim e para quem me acompanha — publicidade também pode ter personalidade.", color: "text-primary" },
+    { title: "Precisão", text: "Sou extremamente criteriosa com o que entrego e busco fazer com que a primeira versão já esteja alinhada ao briefing.", color: "text-accent" },
+  ];
+
+  return (
+    <section id="sobre" className="about-editorial scroll-mt-16">
+      <div className="mx-auto max-w-7xl px-5 pb-16 pt-20 md:pb-24 md:pt-28">
+        <div className="mb-8 flex items-center justify-between border-b border-ink pb-4">
+          <p className="label-mono">02 — Sobre Bruna</p>
+          <span className="label-mono text-muted-foreground">Por trás da estética</span>
+        </div>
+        <h2 className="font-display-x max-w-4xl text-5xl leading-[1.05] md:text-7xl">
+          Uma mente que está sempre <i className="text-primary">alguns passos à frente.</i>
+        </h2>
+
+        <div className="mt-12 grid items-start gap-10 md:mt-16 md:grid-cols-12 md:gap-12">
+          <figure className="relative md:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-full bg-muted">
+              <div className="placeholder-art absolute inset-0 opacity-40" />
+              <div className="absolute inset-6 rounded-t-full border border-primary/30" />
+              <Flower className="absolute left-1/2 top-1/2 w-28 -translate-x-1/2 -translate-y-1/2 opacity-70" petal="fill-primary" core="fill-secondary" />
+              <span className="label-mono absolute inset-x-6 bottom-10 text-center text-muted-foreground">[ Retrato profissional · Bruna ]</span>
+            </div>
+            <Star className="absolute -right-3 top-6 w-12 text-cobalt md:-right-5 md:w-16" />
+            <figcaption className="mt-4 flex items-baseline justify-between gap-4">
+              <span className="font-display-x text-2xl italic">Bruna, por inteiro.</span>
+              <span className="label-mono text-muted-foreground">B.B. / 01</span>
+            </figcaption>
+          </figure>
+          <div className="about-prose space-y-6 md:col-span-6 md:col-start-7 md:pt-8">
+            <p className="font-display-x text-2xl leading-snug md:text-3xl">Tenho 32 anos, sou cabeleireira, maquiadora profissional e uma eterna apaixonada por criar —</p>
+            <p className="text-muted-foreground">além de mãe de pet, porque aparentemente uma função extra nunca é demais.</p>
+            <div className="my-8 h-1 w-12 bg-secondary" aria-hidden />
+            <p>Nasci em uma cidade pequena do interior e sempre tive a sensação de que meu mundo era maior do que aquele lugar.</p>
+            <p>Mudei para uma cidade maior, encontrei meu espaço, mas continuo gostando da ideia de construir meu próprio universo sem precisar estar no centro de tudo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative overflow-hidden bg-secondary py-14 text-secondary-foreground md:py-20">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-12 md:gap-12">
+          <div className="relative md:col-span-7">
+            <span className="font-display-x absolute -top-8 text-8xl leading-none text-primary" aria-hidden>“</span>
+            <blockquote className="font-display-x relative pt-6 text-[2.75rem] leading-[1.05] md:text-7xl">
+              Minha cabeça funciona rápido.<br /><i className="text-primary">Muito rápido.</i>
+            </blockquote>
+            <Star className="mt-7 w-10 text-accent" />
+          </div>
+          <div className="about-prose space-y-6 md:col-span-5 md:pt-8">
+            <p>Sou aquela pessoa que naturalmente procura soluções, conecta ideias, pensa no próximo passo e gosta de fazer as coisas acontecerem.</p>
+            <p>Sempre fui a amiga das dicas, das soluções, dos trabalhos manuais e das ideias que começam com um simples <span className="font-display-x text-2xl italic">“e se a gente…?”</span></p>
+            <p>Na criação de conteúdo, isso se traduz em um olhar muito visual e uma facilidade enorme para transformar um briefing em uma direção criativa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
+        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-5">
+            <p className="label-mono mb-4 text-muted-foreground">O que eu crio</p>
+            <h3 className="font-display-x text-4xl leading-tight md:text-5xl">Curiosidade como <i className="text-accent">ponto de partida.</i></h3>
+            <Flower className="my-8 w-20 md:my-10 md:w-28" petal="fill-cobalt" core="fill-secondary" />
+            <p className="about-prose">Meu conteúdo transita entre beleza, cabelo, maquiagem, lifestyle, estética, cultura pop, transformações e tudo aquilo que desperta minha curiosidade criativa.</p>
+          </div>
+          <div className="about-prose space-y-6 md:col-span-6 md:col-start-7 md:pt-10">
+            <p>Gosto de entender rapidamente o que uma marca precisa e encontrar uma maneira de transformar isso em conteúdo que faça sentido dentro do meu universo — sem perder a mensagem, sem complicar a execução e sem deixar de parecer meu.</p>
+            <p>Posso criar algo altamente produzido, visual e estético, mas também gosto do conteúdo mais espontâneo, próximo e humanizado.</p>
+            <p className="font-display-x py-3 text-3xl leading-tight text-primary md:text-4xl">Porque nem todo conteúdo precisa parecer uma campanha para funcionar.</p>
+            <p>Às vezes, a ideia mais simples é justamente a que encontra o público.</p>
+            <p>E, quando existe uma boa ideia, gosto de executá-la com clareza, personalidade e atenção aos detalhes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative overflow-hidden bg-accent py-16 text-accent-foreground md:py-24">
+        <div className="mx-auto max-w-7xl px-5">
+          <p className="label-mono mb-6 text-secondary">Como eu trabalho com marcas</p>
+          <div className="grid gap-8 md:grid-cols-12 md:gap-12">
+            <h3 className="font-display-x text-4xl leading-tight md:col-span-5 md:text-5xl">Uma boa publicidade começa antes de apertar o <span className="text-secondary">REC<span className="ml-2 inline-block h-3 w-3 rounded-full bg-primary" aria-hidden /></span>.</h3>
+            <div className="about-prose space-y-6 md:col-span-6 md:col-start-7">
+              <p className="font-display-x text-2xl italic md:text-3xl">Começa entendendo o briefing.</p>
+              <p>Tenho facilidade para interpretar direcionamentos, identificar o que realmente precisa ser comunicado e transformar informações de marca em uma ideia visualmente interessante e naturalmente integrada ao meu conteúdo.</p>
+              <p>Meu objetivo é entregar um conteúdo que cumpra o briefing com precisão, mas que continue tendo a minha identidade.</p>
+            </div>
+          </div>
+          <div className="relative mt-14 border-t border-accent-foreground/30 pt-10 md:mt-20 md:pt-14">
+            <blockquote className="font-display-x max-w-5xl text-4xl leading-[1.15] md:text-6xl">
+              A marca precisa aparecer.<br />
+              <i className="text-secondary">Mas a Bruna também precisa estar ali.</i>
+            </blockquote>
+            <div className="mt-8 flex items-center gap-4">
+              <Star className="w-7 shrink-0 text-primary" />
+              <span className="font-display-x text-2xl italic">Bruna Barbosa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
+        <p className="label-mono mb-5 text-muted-foreground">Por que trabalhar comigo?</p>
+        <div className="mb-12 flex items-end justify-between gap-6 md:mb-16">
+          <h3 className="font-display-x max-w-2xl text-4xl leading-tight md:text-5xl">Uma ideia boa.<br /><i className="text-primary">Cinco pontos de apoio.</i></h3>
+          <Flower className="hidden w-24 shrink-0 sm:block" petal="fill-primary" core="fill-secondary" />
+        </div>
+        <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 md:grid-cols-6 md:gap-y-14">
+          {pillars.map((pillar, i) => (
+            <article key={pillar.title} className={`relative min-w-0 border-t border-ink/20 pt-5 ${i < 3 ? "md:col-span-2" : "md:col-span-3"}`}>
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <span className={`font-display-x text-4xl italic ${pillar.color}`}>0{i + 1}</span>
+                <Star className={`w-5 ${pillar.color}`} />
+              </div>
+              <h4 className={`font-display-x mb-3 text-3xl ${pillar.color}`}>{pillar.title}</h4>
+              <p className="about-prose max-w-md">{pillar.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   const [open, setOpen] = useState(false);
 
@@ -204,23 +330,7 @@ function Index() {
       </section>
 
       {/* 02 SOBRE */}
-      <section id="sobre" className="mx-auto max-w-7xl scroll-mt-16 px-5 py-20 md:py-28">
-        <SectionHead n="02" kicker="Sobre Bruna" title={<>Criadora, <i className="text-accent">diretora</i> de estética.</>} />
-        <div className="grid gap-8 md:grid-cols-12">
-          <Placeholder label="Retrato editorial" className="aspect-[4/5] md:col-span-5" />
-          <div className="flex flex-col justify-between gap-8 md:col-span-7">
-            <p className="font-display-x text-3xl leading-tight md:text-5xl">
-              A beleza é um dos meus <span className="bg-secondary px-1">territórios criativos</span> — não uma prisão.
-            </p>
-            <p className="max-w-prose text-muted-foreground">[ Placeholder: bio da Bruna, trajetória e visão criativa — texto definitivo a ser fornecido. ]</p>
-            <div className="grid grid-cols-2 gap-px border border-ink bg-ink sm:grid-cols-4">
-              {["Impactante", "Criteriosa", "Versátil", "Inventiva"].map((t) => (
-                <span key={t} className="label-mono bg-background p-4 text-center">{t}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutBruna />
 
       {/* 03 NÚMEROS */}
       <section id="numeros" className="scroll-mt-16 bg-ink py-20 text-background md:py-28">
