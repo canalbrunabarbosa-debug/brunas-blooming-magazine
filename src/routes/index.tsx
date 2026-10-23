@@ -355,19 +355,10 @@ function Index() {
 
           {/* POSITIONING + CTA */}
           <div className="reveal relative z-20 mt-8 flex flex-col justify-end gap-6 md:col-span-3 md:mt-0" style={{ animationDelay: ".3s" }}>
-            <p className="label-mono text-secondary">Criadora de conteúdo & influência criativa</p>
-            <p className="font-display-x text-2xl leading-tight">
-              Conteúdo, influência e direção estética — transitando entre universos com uma só assinatura.
-            </p>
-            <p className="label-mono leading-relaxed opacity-80">Beauty · Style · Lifestyle · Cultura pop · Conteúdo criativo</p>
-            <div className="flex flex-col gap-3">
-              <a href="#portfolio" className="group label-mono flex items-center justify-between border-2 border-ink bg-ink px-5 py-4 text-background transition-all hover:bg-secondary hover:text-ink">
-                Ver meu trabalho <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
-              <a href="#universos" className="group label-mono flex items-center justify-between border-2 border-primary-foreground px-5 py-4 transition-all hover:bg-primary-foreground hover:text-primary">
-                Conhecer meu universo <span className="transition-transform group-hover:rotate-45">✦</span>
-              </a>
-            </div>
+            <p className="font-display-x text-2xl leading-tight text-secondary">Criadora de conteúdo &amp; influência criativa</p>
+            <a href="#sobre" className="group label-mono flex items-center justify-between border-2 border-ink bg-ink px-5 py-4 text-background transition-all hover:bg-secondary hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+              Conheça meu trabalho <span className="transition-transform group-hover:translate-y-1" aria-hidden>↓</span>
+            </a>
           </div>
         </div>
 
