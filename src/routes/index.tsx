@@ -214,10 +214,10 @@ function PresencaDigital() {
         <div className="mb-14 grid gap-6 md:mb-20 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
             <p className="label-mono mb-3 text-secondary">
-              <span className="text-orange">03</span> — Ecossistema de criação
+              <span className="text-orange">03</span> — Presença digital
             </p>
             <h2 className="font-display-x text-6xl leading-[0.9] md:text-8xl">
-              Presença <i className="text-primary">digital</i>
+              Em <i className="text-primary">números</i>
             </h2>
           </div>
           <p className="max-w-sm text-lg leading-relaxed text-background/80 md:col-span-4">
@@ -278,7 +278,7 @@ function PresencaDigital() {
         <div className="mt-20 flex items-center gap-4 md:mt-28">
           <Flower className="h-10 w-10 shrink-0 spin-slow" core="fill-orange" />
           <p className="font-display-x text-2xl italic md:text-4xl">
-            Cada plataforma tem seu ritmo. <span className="text-primary">A assinatura continua sendo minha.</span>
+            Cada plataforma tem seu ritmo.<br /><span className="text-primary">A assinatura continua sendo minha.</span>
           </p>
         </div>
       </div>
