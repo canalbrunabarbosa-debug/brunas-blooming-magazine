@@ -4,16 +4,16 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bruna Barbosa (@brunapbarb) — Portfólio & Media Kit" },
+      { title: "Bruna Barbosa — Criadora de Conteúdo & Influência Criativa" },
       {
         name: "description",
         content:
-          "Criativa, artística, autêntica. A publicidade entra no universo de Bruna Barbosa — não o universo dela na publicidade.",
+          "Portfólio de Bruna Barbosa (@brunapbarb), criadora de conteúdo e influência criativa: beauty, lifestyle, entretenimento e campanhas com marcas.",
       },
-      { property: "og:title", content: "Bruna Barbosa — Portfólio & Media Kit" },
+      { property: "og:title", content: "Bruna Barbosa — Criadora de Conteúdo & Influência Criativa" },
       {
         property: "og:description",
-        content: "Editorial digital interativo da criadora de conteúdo @brunapbarb.",
+        content: "A publicidade entra no meu universo — não o meu universo na publicidade.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -374,38 +374,30 @@ function Index() {
         </div>
       </section>
 
-      {/* 04 UNIVERSOS — transition */}
+      {/* 04 UNIVERSOS */}
       <section id="universos" className="relative scroll-mt-16 overflow-hidden bg-ink py-20 text-background md:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-4 flex items-center justify-between gap-4">
-            <p className="label-mono text-secondary">Territórios criativos</p>
+            <p className="label-mono text-secondary">04 — Universos de conteúdo</p>
             <Flower className="spin-slow pointer-events-none w-12 shrink-0 md:w-16" petal="fill-primary" core="fill-orange" />
           </div>
-          <h2 className="reveal font-display-x mb-12 text-[14vw] leading-[0.85] md:text-9xl">
-            Muitos mundos.<br /><i className="text-primary">Uma assinatura.</i>
+          <h2 className="reveal font-display-x mb-12 text-[13vw] leading-[0.85] md:text-9xl">
+            Muitos mundos,<br /><i className="text-primary">uma assinatura.</i>
           </h2>
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-px border border-background/30 bg-background/30 md:grid-cols-4">
-              {[
-                ["Beauty", "Make · cabelo · skincare · transformações", "text-primary"],
-                ["Style", "Looks · estética · composição", "text-secondary"],
-                ["Lifestyle", "Rotina · casa · escolhas", "text-cobalt"],
-                ["Cultura pop", "Música · séries · terror", "text-accent"],
-              ].map(([t, d, c], i) => (
-                <article key={t} className="group relative flex aspect-[3/4] flex-col justify-between bg-ink p-4 transition-colors duration-500 hover:bg-primary md:p-6">
-                  <div className="flex justify-between">
-                    <span className="label-mono text-background/50">U.0{i + 1}</span>
-                    <Star className={`w-5 transition-transform duration-700 group-hover:rotate-180 ${c} group-hover:text-background`} />
-                  </div>
-                  <div>
-                    <h3 className={`font-display-x text-3xl italic md:text-5xl ${c} transition-colors group-hover:text-background`}>{t}</h3>
-                    <p className="mt-2 text-xs text-background/70">{d}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-px border border-background/30 bg-background/30 sm:grid-cols-2 md:grid-cols-4">
+            {UNIVERSOS.map(([t, d, c], i) => (
+              <article key={t} className="group relative flex min-h-56 flex-col justify-between bg-ink p-5 transition-colors duration-500 hover:bg-primary md:aspect-[3/4] md:p-6">
+                <div className="flex justify-between">
+                  <span className="label-mono text-background/50">U.0{i + 1}</span>
+                  <Star className={`w-5 transition-transform duration-700 group-hover:rotate-180 ${c} group-hover:text-background`} />
+                </div>
+                <div>
+                  <h3 className={`font-display-x text-3xl italic md:text-4xl ${c} transition-colors group-hover:text-background`}>{t}</h3>
+                  <p className="mt-3 text-sm text-background/75">{d}</p>
+                </div>
+              </article>
+            ))}
           </div>
-          <p className="label-mono mt-8 text-background/60">Também aberta a: alimentação · tecnologia · eletrodomésticos · varejo · entretenimento</p>
         </div>
       </section>
 
@@ -419,63 +411,177 @@ function Index() {
       <section id="portfolio" className="scroll-mt-16 border-y border-ink bg-muted py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <SectionHead n="05" kicker="Portfólio" title={<>Campanhas que <i className="text-accent">parecem minhas</i>.</>} />
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-6">
-            <Placeholder label="Vídeo destaque" className="col-span-2 aspect-[9/12] md:col-span-3 md:row-span-2 md:aspect-auto" />
-            <Placeholder label="Trabalho 02" className="aspect-[9/16] md:col-span-1" />
-            <Placeholder label="Trabalho 03" className="aspect-[9/16] md:col-span-2" />
-            <Placeholder label="Trabalho 04" className="aspect-square md:col-span-2" />
-            <Placeholder label="Trabalho 05" className="aspect-square md:col-span-1" />
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-6 md:gap-6">
+            {CASES.map((c, i) => <CaseCard key={c.brand} item={c} index={i} />)}
           </div>
         </div>
       </section>
 
       {/* 06 FORMATOS */}
       <section id="formatos" className="mx-auto max-w-7xl scroll-mt-16 px-5 py-20 md:py-28">
-        <SectionHead n="06" kicker="Formatos de criação" title={<>Como a marca <i className="text-primary">entra</i>.</>} />
+        <SectionHead n="06" kicker="Formatos de criação" title="Formatos de criação" />
+        <p className="font-display-x mb-10 max-w-2xl text-2xl leading-snug md:text-3xl">
+          “Conteúdo pensado para transformar marcas, produtos e ideias em experiências que <i className="text-primary">dão vontade de assistir</i>.”
+        </p>
         <ul className="border-t border-ink">
-          {["Reels / TikTok", "Tutorial integrado", "Review", "Challenge", "Transformação", "Stories"].map((f, i) => (
-            <li key={f} className="group flex items-center justify-between border-b border-ink py-5 transition-colors hover:bg-secondary md:px-4">
-              <span className="font-display-x text-3xl transition-transform group-hover:translate-x-2 md:text-5xl">{f}</span>
-              <span className="label-mono text-muted-foreground">F.0{i + 1}</span>
-            </li>
-          ))}
+          {FORMATOS.map(([f, d], i) => <FormatRow key={f} name={f} desc={d} index={i} />)}
         </ul>
       </section>
 
       {/* 07 MARCAS */}
       <section id="marcas" className="scroll-mt-16 bg-accent py-20 text-accent-foreground md:py-28">
         <div className="mx-auto max-w-7xl px-5">
-          <p className="label-mono mb-3 text-secondary">07 — Marcas & colaborações</p>
-          <h2 className="font-display-x mb-12 text-5xl md:text-7xl">Quem já <i>entrou</i></h2>
-          <div className="grid grid-cols-2 gap-px bg-accent-foreground/30 md:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="label-mono flex aspect-[3/2] items-center justify-center bg-accent text-accent-foreground/60">[ Logo {i + 1} ]</div>
-            ))}
+          <p className="label-mono mb-3 text-secondary">07 — Marcas &amp; colaborações</p>
+          <h2 className="font-display-x mb-4 text-5xl md:text-7xl">Marcas &amp; colaborações</h2>
+          <p className="mb-12 max-w-xl text-lg text-accent-foreground/85">“Marcas que já fizeram parte do meu conteúdo.”</p>
+          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+            {MARCAS.map(([cat, list]) => <BrandGroup key={cat} title={cat} brands={list} />)}
           </div>
         </div>
       </section>
 
       {/* 08 CONTATO */}
       <section id="contato" className="relative scroll-mt-16 overflow-hidden bg-secondary py-24 text-ink md:py-32">
-        <Flower className="spin-slow absolute -right-20 bottom-0 w-72 md:w-[28rem]" />
+        <Flower className="spin-slow pointer-events-none absolute -right-20 bottom-0 w-72 opacity-90 md:w-[28rem]" core="fill-orange" />
         <div className="relative mx-auto max-w-7xl px-5">
           <p className="label-mono mb-4">08 — Contato</p>
-          <h2 className="font-display-x text-[16vw] leading-[0.85] md:text-[9rem]">
-            Vamos criar <i className="text-primary">juntos?</i>
+          <h2 className="font-display-x text-[14vw] leading-[0.85] md:text-[8rem]">
+            Vamos criar algo <i className="text-primary">juntas?</i>
           </h2>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href="https://instagram.com/brunapbarb" target="_blank" rel="noreferrer" className="label-mono border-2 border-ink bg-ink px-6 py-4 text-center text-background transition-colors hover:bg-primary">
-              @brunapbarb ↗
-            </a>
-            <span className="label-mono border-2 border-ink px-6 py-4 text-center">[ e-mail comercial a fornecer ]</span>
-          </div>
+          <p className="mt-6 max-w-lg text-lg">Tem uma campanha em mente? Vamos conversar.</p>
+          <a href="mailto:canalbrunabarbosa@gmail.com" className="label-mono mt-8 inline-flex border-2 border-ink bg-ink px-6 py-4 text-background transition-colors hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            Entrar em contato →
+          </a>
+          <ul className="mt-12 grid max-w-3xl gap-px border border-ink bg-ink sm:grid-cols-2">
+            {CONTATOS.map(([k, v, href]) => (
+              <li key={k} className="bg-secondary">
+                <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="group flex flex-col gap-1 p-5 transition-colors hover:bg-background focus-visible:bg-background">
+                  <span className="label-mono text-muted-foreground">{k}</span>
+                  <span className="font-display-x text-xl md:text-2xl">{v} <span className="text-orange transition-transform group-hover:translate-x-1" aria-hidden>↗</span></span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <footer className="label-mono flex justify-between bg-ink px-5 py-4 text-background/70">
-        <span>© Bruna Barbosa</span>
-        <a href="#top">Topo ↑</a>
+      <footer className="bg-ink px-5 py-10 text-background/80">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-display-x text-3xl italic text-background">Bruna<span className="text-primary">.</span></p>
+            <p className="label-mono mt-2">Criadora de conteúdo &amp; influência criativa</p>
+          </div>
+          <div className="label-mono flex flex-wrap gap-5">
+            <a href="https://www.instagram.com/brunapbarb" target="_blank" rel="noreferrer" className="hover:text-primary">Instagram</a>
+            <a href="https://www.tiktok.com/@brunapbarb" target="_blank" rel="noreferrer" className="hover:text-primary">TikTok</a>
+            <a href="#top" className="hover:text-primary">Topo ↑</a>
+          </div>
+        </div>
+        <p className="label-mono mx-auto mt-8 max-w-7xl text-background/50">© Bruna Barbosa</p>
       </footer>
     </div>
   );
 }
+
+/* ---------- Content (edit here) ---------- */
+const UNIVERSOS = [
+  ["Beauty", "Maquiagem, cabelo, skincare e experimentação.", "text-primary"],
+  ["Lifestyle", "Rotina, experiências, descobertas e momentos do cotidiano.", "text-secondary"],
+  ["Entretenimento", "Trends, desafios, humor, referências de cultura pop e formatos que geram identificação.", "text-cobalt"],
+  ["Estética & Criatividade", "Produções visuais, conceitos, transformações e conteúdos com maior direção estética.", "text-orange"],
+] as const;
+
+type Case = { brand: string; title: string; desc: string; reel: string; cover?: string };
+/* Add `cover: "url"` to each case when the image is ready. */
+const CASES: Case[] = [
+  { brand: "Eudora Siàge", title: "Ultra Bond Reset", desc: "Campanha apresentando a nova linha de reparação dos fios.", reel: "https://www.instagram.com/reel/DdKMzk7K2O3/?srtk=eDBwN3RqM3czb3Y5" },
+  { brand: "SHEGLAM", title: "Publicidade + review", desc: "Publicidade + review de maquiagem.", reel: "https://www.instagram.com/reel/DbLxD85qry1/?srtk=bGEzc2t5MjQyODgw" },
+  { brand: "Supermercados Belinelli", title: "Nova cafeteria & reforma", desc: "Campanha regional apresentando a nova cafeteria e a reforma do supermercado.", reel: "https://www.instagram.com/reel/DXHqNzOhZ-e/?rpxt=MTg3YTdwbGxhNWlveA==" },
+  { brand: "Amazon", title: "Black Friday", desc: "Campanha de Black Friday.", reel: "https://www.instagram.com/reel/DRfeyQmieY2/?vrfl=cXdzeW05OGhraTM4" },
+  { brand: "Dove", title: "Desodorante", desc: "Publicidade de desodorante.", reel: "https://www.instagram.com/reel/DOf-2P_Dl5q/?exln=MTN4NTR5Z3Z3NGhqeg==" },
+];
+const CASE_LAYOUT = [
+  "col-span-2 md:col-span-3 md:row-span-2",
+  "col-span-1 md:col-span-3",
+  "col-span-1 md:col-span-2 md:mt-12",
+  "col-span-1 md:col-span-2",
+  "col-span-1 md:col-span-2 md:-mt-12",
+];
+const CASE_TONES = ["bg-primary", "bg-accent", "bg-cobalt", "bg-orange", "bg-secondary"];
+
+function CaseCard({ item, index }: { item: Case; index: number }) {
+  return (
+    <a
+      href={item.reel}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Assistir ao Reel: ${item.brand} — ${item.title} (abre o Instagram)`}
+      className={`group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${CASE_LAYOUT[index]}`}
+    >
+      <div className={`relative aspect-[9/16] overflow-hidden border-2 border-ink ${index === 0 ? "md:aspect-[4/5]" : ""} ${CASE_TONES[index]}`}>
+        {item.cover ? (
+          <img src={item.cover} alt={`Capa da campanha ${item.brand} — ${item.title}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        ) : (
+          <div className="placeholder-art absolute inset-0 flex items-center justify-center">
+            <span className="label-mono bg-ink px-2 py-1 text-background">[ Capa · {item.brand} ]</span>
+          </div>
+        )}
+        <span className="label-mono absolute left-3 top-3 bg-background px-2 py-1 text-ink">Case 0{index + 1}</span>
+        <span className="label-mono absolute bottom-3 right-3 bg-ink px-3 py-2 text-background transition-colors group-hover:bg-primary">▶ Ver Reel</span>
+      </div>
+      <div className="mt-3">
+        <p className="label-mono text-muted-foreground">{item.brand}</p>
+        <h3 className="font-display-x text-xl leading-tight transition-colors group-hover:text-primary md:text-2xl">{item.title}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+      </div>
+    </a>
+  );
+}
+
+const FORMATOS = [
+  ["Challenge", "Produtos e ideias transformados em experiências participativas, divertidas e com potencial de conexão e compartilhamento."],
+  ["Tutorial", "Conteúdo visual e demonstrativo que ensina, apresenta e mostra o produto de forma natural e fácil de entender."],
+  ["Review", "Uma experiência real com o produto, combinando demonstração, opinião e percepção de quem realmente está usando — com close-ups, texturas, aplicação e detalhes visuais que valorizam a experiência e despertam o desejo pelo produto."],
+  ["Transformação", "Do antes ao depois. Conteúdos que exploram processos, resultados e mudanças de forma visual e envolvente."],
+  ["Conteúdo estético", "Vídeos visualmente marcantes, pensados para valorizar produto, conceito, campanha ou identidade de marca."],
+  ["Vlog", "A marca inserida em momentos reais do cotidiano, criando uma narrativa mais espontânea, próxima e pessoal."],
+  ["Storytelling", "Produtos e campanhas apresentados através de histórias, conceitos e narrativas que vão além da publicidade tradicional."],
+  ["Humor", "Conteúdo leve, criativo e identificável, usando humor e situações do cotidiano para aproximar a marca do público."],
+] as const;
+const FORMAT_HOVER = ["hover:bg-secondary", "hover:bg-muted", "hover:bg-secondary", "hover:bg-muted"];
+
+function FormatRow({ name, desc, index }: { name: string; desc: string; index: number }) {
+  return (
+    <li className={`group grid gap-2 border-b border-ink py-6 transition-colors md:grid-cols-12 md:items-baseline md:gap-6 md:px-4 ${FORMAT_HOVER[index % 4]}`}>
+      <span className="label-mono text-orange md:col-span-1">F.0{index + 1}</span>
+      <h3 className={`font-display-x text-3xl transition-transform group-hover:translate-x-2 md:col-span-4 md:text-5xl ${index % 2 ? "italic" : ""}`}>{name}</h3>
+      <p className="text-base leading-relaxed text-muted-foreground md:col-span-7">{desc}</p>
+    </li>
+  );
+}
+
+const MARCAS = [
+  ["Beleza & Cosméticos", ["Eudora", "O Boticário", "B. Hulmann", "Natura", "Dove", "Vichy", "Grupo L’Oréal", "Kamaleão Colors", "Sallve"]],
+  ["Varejo & E-commerce", ["Amazon", "Mercado Livre", "SHEIN", "AliExpress", "App Amo Ofertas", "Supermercado Belinelli"]],
+  ["Lifestyle & Outros", ["Dr. Peanut", "Pantys"]],
+] as const;
+
+function BrandGroup({ title, brands }: { title: string; brands: readonly string[] }) {
+  return (
+    <div>
+      <p className="label-mono mb-4 border-b border-accent-foreground/40 pb-3 text-secondary">{title}</p>
+      <ul className="flex flex-col">
+        {brands.map((b) => (
+          <li key={b} className="font-display-x border-b border-accent-foreground/15 py-3 text-2xl transition-colors hover:text-secondary md:text-3xl">{b}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const CONTATOS = [
+  ["Instagram", "@brunapbarb", "https://www.instagram.com/brunapbarb"],
+  ["TikTok", "@brunapbarb", "https://www.tiktok.com/@brunapbarb"],
+  ["E-mail", "canalbrunabarbosa@gmail.com", "mailto:canalbrunabarbosa@gmail.com"],
+  ["WhatsApp", "(16) 99617-7797", "https://wa.me/5516996177797"],
+] as const;
